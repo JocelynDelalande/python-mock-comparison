@@ -359,10 +359,8 @@ Override new instances of a class
 .. doctest::
 
     >>> # Mock
-    >>> with mock.patch('somemodule.SomeClass') as MockClass:
-    ...     MockClass.return_value = some_other_object
+    >>> with mock.patch('somemodule.SomeClass', return_value=some_other_object):
     ...     assertEqual(some_other_object, somemodule.SomeClass())
-    ...
 
     >>> # Flexmock
     >>> flexmock(somemodule.SomeClass).new_instances(some_other_object)
